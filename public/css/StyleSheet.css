@@ -1,0 +1,52 @@
+*{
+    font-weight: bolder;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0%;
+    padding: 0%;
+
+}
+
+.container{
+
+   width: 250px;
+   height: 350px;
+   border-radius: 10px;
+   position: absolute;
+   top: 22%;
+   left: 40%;
+   right: 40%;
+    text-align: center;
+    background-color:rgba(160, 194, 222, 0.799);
+}
+#a{
+
+    font-size: 40px;
+    padding: 25% 0%;
+    
+} 
+.fa-street-view{
+    animation: rotates 3s linear infinite alternate;
+    color: rgb(235, 236, 237);
+}
+@keyframes rotates {
+    from{
+        transform: translate(-0.5rem);
+    }
+    to{
+        transform: translate((0.5rem));
+    }
+}
+#cityname{
+    padding-bottom: 15%;
+    font-weight: bolder;
+}
+#cityname p{
+    font-size: 13px;
+    opacity: .7;
+    padding-top: 3px;
+}
+#temp p{
+    font-size: 13px;
+    opacity: .7;
+    padding-top: 3px;
+}

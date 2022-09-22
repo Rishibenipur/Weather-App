@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io (1)/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon_io (1)/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon_io (1)/favicon-16x16.png">
+<link rel="manifest" href="./favicon_io (1)/favicon-16x16.png">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&amp;family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Quicksand:wght@300;600&amp;family=Roboto:ital,wght@1,100&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/StyleSheet.css">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon_io (1)/favicon-16x16.png">
+<title>Weather App</title>
+<script src="https://kit.fontawesome.com/f250873f9c.js" crossorigin="anonymous"></script><style media="all" id="fa-v4-font-face"></style>
+
+</head>
+
+
+
+<body>
+    <div class="container">
+       <div id="icon">
+        
+        </div>
+        <div class="c" id="one">
+        <div class="c" id="two">
+         <div class="c" id="three">
+            <div id="cityname">
+           
+                 <h1> <i class="fa-solid fa-street-view" id="b"></i>{{city}},{{country}}</h1>
+                <p id="dat">SUN | AUG 28 | 01:33PM</p>
+            </div>
+            <div id="temp">
+               
+               <h1 id="h">{{temp}} ℃</h1>
+               <p id="min_max">Min {{mintemp}}℃|Max {{maxtemp}}℃</p>
+            </div>
+        </div>
+       </div>
+     </div>
+    
+    </div>
+    <script>
+
+        let icon=document.getElementById("icon");
+        const value="{{val}}";
+        if(value=="Sunny")
+        {
+            icon.innerHTML=
+            " <i class='fa-solid fa-sun' id='a' style='color: #ffff00 ;'></i>"
+        }
+        else if(value=="Clouds")
+        {
+            icon.innerHTML=
+            " <i class='fa-solid fa-cloud' id='a'  style='color: #f6f6f6 ;'></i>"
+        }
+       else if(value=="Rain")
+        {
+            icon.innerHTML=
+            " <i class='fa-solid fa-cloud-rain' id='a' style='color: #f6f6f6 ;'></i>"
+        }
+    else
+        {
+            icon.innerHTML=
+            " <i class='fa-solid fa-sun' id='a' style='color: #ffff00 ;'></i>"
+        }
+        const d = new Date();
+        const day=d.getDay();
+        const month=d.getMonth();
+        let dayv="";
+        let mv="";
+       if(day==1)
+        {
+            dayv="MON";
+        }
+        else if(day==2)
+        {
+            dayv="TUE";
+        }
+        else if(day==3)
+        {
+            dayv="WED";
+        }
+        else if(day==4)
+        {
+            dayv="THU";
+        }
+        else if(day==5)
+        {
+            dayv="FRI";
+        }
+        else if(day==6)
+        {
+            dayv="SAT";
+        }
+        else if(day==0)
+        {
+            dayv="SUN";
+        }
+        if(month==0)
+        {
+            mv="JAN";
+        }
+        else if(month==1)
+        {
+            mv="FEB";
+        }
+
+        else if(month==2)
+        {
+            mv="MAR";
+        }
+
+        else if(month==3)
+        {
+            mv="APR";
+        }
+
+        else if(month==4)
+        {
+            mv="MAY";
+        }
+
+        else if(month==5)
+        {
+            mv="JUN";
+        }
+
+        else if(month==6)
+        {
+            mv="JUL";
+        }
+
+        else if(month==7)
+        {
+            mv="AUG";
+        }
+        else if(month==8)
+        {
+            mv="SEP";
+        }
+
+        else if(month==9)
+        {
+            mv="OCT";
+        }
+
+        else if(month==10)
+        {
+            mv="NOV";
+        }
+
+        else if(month==11)
+        {
+            mv="DEC";
+        }
+  let hour=d.getHours();
+  let hv="";
+  if(hour<12)
+  {
+    if(hour<10)
+    hour="0"+hour;
+    else
+    hour=hour;
+    hv="AM";
+
+  }
+  else if(hour>=12){
+    hour=hour-12;
+    if(hour<10)
+    hour="0"+hour;
+    else
+    hour=hour;
+    hv="PM";
+  }
+  const min=d.getMinutes();
+  if(min<10)
+  min="0"+min;
+   document.getElementById("dat").innerHTML=`${dayv} | ${mv} ${d.getDate()} | ${hour}:${min}${hv}`;
+    </script>
+
+</body>
+</html>
